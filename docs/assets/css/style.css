@@ -101,7 +101,7 @@
         }
 
         section {
-            padding: var(--space-xl) 0;
+            padding: clamp(4rem, 10vw, 8rem) 0; 
         }
 
         /* 5. Header & Navegação */
@@ -132,59 +132,57 @@
         }
 
         .nav-controls {
-            display: flex;
-            gap: var(--space-sm);
-            align-items: center;
-        }
+    display: flex;
+    gap: 0.75rem; /* Respiro entre os ícones */
+    align-items: center;
+}
 
         .icon-btn {
-            background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            width: 36px;
-            height: 36px;
-            border-radius: 6px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all var(--transition-fast);
-            font-family: var(--font-mono);
-            font-size: 12px;
-            text-transform: uppercase;
-        }
+    background: transparent;
+    border: 1px solid var(--border-color, rgba(255,255,255,0.1));
+    color: var(--text-secondary, #a1a1aa);
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
 
         .icon-btn:hover {
-            background: var(--surface-hover);
-            border-color: var(--text-secondary);
-        }
+    color: var(--text-primary, #ededed);
+    background: var(--surface-hover, #1a1a1a);
+    border-color: var(--text-secondary, #a1a1aa);
+}
 
-        .icon-btn svg {
-            width: 18px;
-            height: 18px;
-        }
+       .icon-btn svg {
+    width: 18px !important;
+    height: 18px !important;
+}
 
         /* --- CLASSES UTILITÁRIAS PARA SVGs --- */
-        .svg-fill {
-            fill: currentColor;
-            stroke: none;
-        }
+       .svg-fill {
+    fill: currentColor !important;
+    stroke: none !important;
+}
 
-        .svg-stroke {
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
+.svg-stroke {
+    fill: none !important;
+    stroke: currentColor !important;
+    stroke-width: 2 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+}
 
         /* Divisor visual elegante no header */
         .nav-divider {
-            width: 1px;
-            height: 24px;
-            background-color: var(--border-color);
-            margin: 0 var(--space-xs);
-        }
+    width: 1px;
+    height: 20px;
+    background-color: var(--border-color, rgba(255,255,255,0.1));
+    margin: 0 0.25rem;
+}
 
         /* 6. Typography H1, H2, P */
         h1, h2, h3 {
@@ -204,8 +202,8 @@
 
         /* 7. Section: Hero */
         #hero {
-            padding-top: calc(70px + var(--space-xl));
-            min-height: 80vh;
+            padding-top: calc(70px + clamp(2rem, 5vw, 4rem));
+            min-height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -332,10 +330,6 @@
 
         /* 8. Section: Grid de Projetos */
 
-        #projects {
-            padding-top: var(--space-xl);
-            margin-bottom: var(--space-xl);
-        }
         .grid-projects {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -390,10 +384,6 @@
 
         /* 9. Section: Skills */
 
-        #skills {
-            padding-top: var(--space-xl);
-            margin-bottom: var(--space-xl);
-        }
         .skills-container {
             display: flex;
             flex-direction: column;
