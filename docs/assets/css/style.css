@@ -1,4 +1,4 @@
-/* 1. Variáveis e Design System (Linear/Vercel Vibe) */
+ /* 1. Variáveis e Design System (Linear/Vercel Vibe) */
         :root {
             /* Cores Dark (Default) */
             --bg-color: #0a0a0a;
@@ -255,6 +255,57 @@
 
         .btn-secondary:hover {
             background-color: var(--surface-hover);
+        }
+
+        /* --- NOVOS ESTILOS PARA ÍCONES E SOCIAL BAR --- */
+        .icon-sm {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .social-bar {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .social-icon {
+            color: var(--text-secondary);
+            transition: all var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+        }
+
+        .social-icon:hover {
+            color: var(--text-primary);
+            border-color: var(--text-secondary);
+            transform: translateY(-4px); /* Animação suave para cima */
+        }
+
+        .social-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            stroke: none;
+        }
+        
+        /* Ajuste específico para ícones que usam stroke nativamente (ex: email) */
+        .social-icon .stroke-icon {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
         }
 
         /* 8. Section: Grid de Projetos */
