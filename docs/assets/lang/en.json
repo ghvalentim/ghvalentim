@@ -1,0 +1,12 @@
+{
+  "hero": {
+    "title": "Gabriel Valentim",
+    "subtitle": "Full Stack Developer",
+    "description": "Building software with simplicity, performance and purpose."
+  },
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  }
+}

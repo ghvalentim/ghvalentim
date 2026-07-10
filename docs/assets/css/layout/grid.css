@@ -1,0 +1,31 @@
+@layer layout {
+  /**
+   * Grid System
+   * Utiliza CSS Grid para layouts responsivos fluidos.
+   * Não requer Media Queries para a mudança de colunas.
+   */
+  .grid {
+    display: grid;
+    /* * auto-fit: Preenche o espaço disponível.
+     * minmax(300px, 1fr): Garante que cada item tenha pelo menos 300px, 
+     * expandindo para preencher o espaço restante (1fr). 
+     */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md, 1.5rem);
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Grid para o Tech Stack (itens menores) */
+  .grid-tech {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  /* Grid centralizado para container principal */
+  .grid-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1200px);
+    justify-content: center;
+    padding: 0 var(--spacing-md);
+  }
+}

@@ -1,0 +1,26 @@
+@layer base {
+  :root {
+    --bg-color: #050816;
+    --surface-color: #0F172A;
+    --card-color: #162032;
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --accent: #3B82F6;
+    
+    --font-sans: 'Geist', 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  [data-theme='light'] {
+    --bg-color: #ffffff;
+    --surface-color: #f1f5f9;
+    --text-primary: #0f172a;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+  }
+}
