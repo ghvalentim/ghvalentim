@@ -1,10 +1,12 @@
 @import "base/variables.css";
 @import "base/tipography.css";
+@import "base/reset.css";
 @import "components/card.css";
 @import "components/navbar.css";
 @import "layout/grid.css";
 @import "layout/header.css";
 @import "layout/footer.css";
+@import "layout/container.css";
 @import "components/button.css";
 @import "components/skills.css";
 @import "pages/home.css";

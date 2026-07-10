@@ -48,3 +48,12 @@
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+section {
+  padding: 4rem 0; /* Espaçamento vertical consistente entre seções */
+}
+
+/* Garante que o espaçamento entre parágrafos não se perca */
+p + p {
+  margin-top: 1rem;
+}

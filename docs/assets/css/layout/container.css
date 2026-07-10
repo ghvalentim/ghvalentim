@@ -1,0 +1,6 @@
+.container {
+  max-width: 1200px; /* Ou a largura que definiu para o seu grid */
+  margin: 0 auto;
+  padding: 0 1.5rem; /* Padding lateral consistente para mobile e desktop */
+  width: 100%;
+}
