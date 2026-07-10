@@ -1,0 +1,410 @@
+/* 1. Variáveis e Design System (Linear/Vercel Vibe) */
+        :root {
+            /* Cores Dark (Default) */
+            --bg-color: #0a0a0a;
+            --surface-color: #111111;
+            --surface-hover: #1a1a1a;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --text-primary: #ededed;
+            --text-secondary: #a1a1aa;
+            --brand-color: #ffffff;
+            --brand-color-invert: #000000;
+            --focus-ring: rgba(255, 255, 255, 0.3);
+            
+            /* Tipografia */
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            
+            /* Fluid Typography (clamp) */
+            --text-sm: clamp(0.875rem, 0.8vw + 0.5rem, 0.95rem);
+            --text-base: clamp(1rem, 1vw + 0.75rem, 1.125rem);
+            --text-lg: clamp(1.125rem, 1.5vw + 0.875rem, 1.5rem);
+            --text-xl: clamp(1.5rem, 2vw + 1rem, 2rem);
+            --text-xxl: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+            
+            /* Espaçamentos e Layout */
+            --container-width: 1000px;
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 8rem;
+            
+            /* Transições */
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="light"] {
+            --bg-color: #fafafa;
+            --surface-color: #ffffff;
+            --surface-hover: #f4f4f5;
+            --border-color: rgba(0, 0, 0, 0.1);
+            --text-primary: #171717;
+            --text-secondary: #52525b;
+            --brand-color: #000000;
+            --brand-color-invert: #ffffff;
+            --focus-ring: rgba(0, 0, 0, 0.3);
+        }
+
+        /* 2. Reset Profissional */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background-color var(--transition-normal), color var(--transition-normal);
+            overflow-x: hidden;
+        }
+
+        /* 3. Acessibilidade Base */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--brand-color);
+            color: var(--brand-color-invert);
+            padding: 8px 16px;
+            z-index: 1000;
+            font-weight: 500;
+            text-decoration: none;
+            transition: top var(--transition-fast);
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--text-primary);
+            outline-offset: 4px;
+            border-radius: 4px;
+        }
+
+        /* 4. Layout e Container */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--space-sm);
+        }
+
+        section {
+            padding: var(--space-xl) 0;
+        }
+
+        /* 5. Header & Navegação */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background-color: color-mix(in srgb, var(--bg-color) 80%, transparent);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: var(--text-lg);
+            text-decoration: none;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .nav-controls {
+            display: flex;
+            gap: var(--space-sm);
+            align-items: center;
+        }
+
+        .icon-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+            font-family: var(--font-mono);
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .icon-btn:hover {
+            background: var(--surface-hover);
+            border-color: var(--text-secondary);
+        }
+
+        .icon-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        /* 6. Typography H1, H2, P */
+        h1, h2, h3 {
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+        }
+
+        h2 {
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-md);
+            font-weight: 600;
+        }
+
+        .text-muted {
+            color: var(--text-secondary);
+        }
+
+        /* 7. Section: Hero */
+        #hero {
+            padding-top: calc(70px + var(--space-xl));
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            padding: 4px 12px;
+            border-radius: 99px;
+            margin-bottom: var(--space-md);
+            background: var(--surface-color);
+        }
+
+        #hero h1 {
+            font-size: var(--text-xxl);
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+            max-width: 800px;
+        }
+
+        #hero p {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: var(--space-md);
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: var(--text-base);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--brand-color);
+            color: var(--brand-color-invert);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-primary);
+            border-color: var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--surface-hover);
+        }
+
+        /* 8. Section: Grid de Projetos */
+        .grid-projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: var(--space-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+            transition: transform var(--transition-normal), border-color var(--transition-normal);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--text-secondary);
+        }
+
+        .card h3 {
+            font-size: var(--text-base);
+            font-weight: 600;
+        }
+
+        .card p {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            flex-grow: 1; /* Empurra o rodapé para o fundo */
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: auto;
+        }
+
+        .tech-tag {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--text-secondary);
+        }
+
+        /* 9. Section: Skills */
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .skill-group h3 {
+            font-family: var(--font-mono);
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+        }
+
+        .skill-badge {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: var(--text-base);
+            font-weight: 500;
+        }
+
+        /* 10. Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: var(--space-md) 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: var(--text-sm);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-sm);
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Animações utilitárias */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsivo Extra */
+        @media (max-width: 768px) {
+            :root {
+                --space-xl: 4rem; /* Reduz espaço vertical no mobile */
+            }
+            .hero-actions {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+        
+        /* Preferência do usuário por menos animação */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* Loading Skeleton states para Supabase Fetch */
+        .skeleton {
+            background: linear-gradient(90deg, var(--surface-color) 25%, var(--surface-hover) 50%, var(--surface-color) 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-color: transparent;
+        }
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }

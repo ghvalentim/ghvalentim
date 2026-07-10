@@ -1,6 +1,0 @@
-.container {
-  width: 100%;
-  max-width: 1100px; /* Largura ideal para legibilidade */
-  margin: 0 auto;    /* Centraliza o site */
-  padding: 0 2rem;   /* Padding de segurança lateral (aumenta em mobile) */
-}

@@ -1,82 +1,119 @@
 <!DOCTYPE html>
-<html lang="pt" data-theme="dark">
+<html lang="pt-BR" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- ==========================================
+         SEO & META TAGS (Staff Engineer Standard)
+    =========================================== -->
     <title>Gabriel Valentim | Full Stack Developer</title>
-    <meta name="description" content="Portfolio of Gabriel Valentim, Full Stack Developer focused on performance, clean code, and building software with purpose.">
-    <meta name="keywords" content="Full Stack Developer, Software Engineer, Web Development, JavaScript, TypeScript, Performance">
+    <meta name="description" content="Portfólio de Gabriel Valentim, Full Stack Developer focado em construir software com simplicidade, performance e propósito.">
+    <meta name="keywords" content="Gabriel Valentim, Full Stack Developer, Software Engineer, Web Development, JavaScript, API, Supabase">
     <meta name="author" content="Gabriel Valentim">
-    <meta name="theme-color" content="#050816">
-    <link rel="canonical" href="https://ghvalentim.dev">
-
+    <link rel="canonical" href="https://ghvalentim.dev/">
+    <meta name="theme-color" content="#0a0a0a">
+    
+    <!-- Open Graph / Redes Sociais -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ghvalentim.dev">
+    <meta property="og:url" content="https://ghvalentim.dev/">
     <meta property="og:title" content="Gabriel Valentim | Full Stack Developer">
     <meta property="og:description" content="Building software with simplicity, performance and purpose.">
-    <meta property="og:image" content="https://ghvalentim.dev/assets/images/og-image.png">
+    <meta property="og:image" content="https://ghvalentim.dev/og-image.jpg">
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ghvalentim.dev">
-    <meta property="twitter:title" content="Gabriel Valentim | Full Stack Developer">
-    <meta property="twitter:description" content="Building software with simplicity, performance and purpose.">
-    <meta property="twitter:image" content="https://ghvalentim.dev/assets/images/og-image.png">
-    <link rel="stylesheet" href="assets/css/main.css">
-    
+    <!-- Preload de Fontes (Performance) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Gabriel Valentim",
-  "jobTitle": "Full Stack Developer",
-  "url": "https://ghvalentim.dev",
-  "sameAs": [
-    "https://github.com/ghvalentim",
-    "https://linkedin.com/in/seu-perfil"
-  ],
-  "description": "Full Stack Developer focused on performance, clean code, and building software with purpose."
-}
-</script>
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Gabriel Valentim",
+      "url": "https://ghvalentim.dev",
+      "jobTitle": "Full Stack Developer",
+      "sameAs": [
+        "https://github.com/ghvalentim",
+        "https://linkedin.com/in/ghvalentim"
+      ]
+    }
+    </script>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
-    <header class="site-header">
-  <nav class="container">
-    <div class="logo">ghvalentim.dev</div>
-    <ul class="nav-links">
-      <li><a href="#projects" data-i18n="nav.projects">Projetos</a></li>
-      <li><a href="#contact" data-i18n="nav.contact">Contato</a></li>
-    </ul>
-  </nav>
-</header>
 
-    <main id="main-content" tabindex="-1">
-        <section id="hero" class="hero">
-  <div class="hero-content">
-    <span class="badge" data-i18n="hero.badge"></span>
-    <h1 data-i18n="hero.title"></h1>
-    <p class="hero-subtitle" data-i18n="hero.subtitle"></p>
-    <p class="hero-description" data-i18n="hero.description"></p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn-primary" data-i18n="hero.cta"></a>
-    </div>
-  </div>
-</section>
-<section id="projects">
-    <div class="grid" id="projects-grid">
-        </div>
-</section>
+    <!-- Skip Link Acessível -->
+    <a href="#main" class="skip-link" data-i18n="skipLink">Pular para o conteúdo principal</a>
 
-<section id="skills">
-    <div id="skills-section">
+    <!-- Header / Nav -->
+    <header>
+        <div class="container">
+            <nav aria-label="Navegação Principal">
+                <a href="#" class="logo">ghvalentim.dev</a>
+                <div class="nav-controls">
+                    <!-- Botão de Tradução -->
+                    <button id="langToggle" class="icon-btn" aria-label="Alterar idioma">EN</button>
+                    <!-- Botão de Tema -->
+                    <button id="themeToggle" class="icon-btn" aria-label="Alternar tema">
+                        <svg viewBox="0 0 24 24" id="themeIcon">
+                            <!-- Ícone da Lua (Dark Mode Default) -->
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
         </div>
-</section>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="container">
+            <span class="hero-badge" data-i18n="heroBadge">Disponível para novos desafios</span>
+            <h1 data-i18n="heroTitle">Gabriel Valentim<br><span class="text-muted">Full Stack Developer</span></h1>
+            <p data-i18n="heroDesc">Construindo software com simplicidade, performance e propósito. Especialista em arquiteturas front-end robustas e APIs eficientes.</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary" data-i18n="btnProjects">Ver Projetos</a>
+                <a href="https://github.com/ghvalentim" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-i18n="btnGithub">GitHub</a>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="container">
+            <h2 data-i18n="skillsTitle">Stack Técnica</h2>
+            <div id="skills-container" class="skills-container">
+                <!-- Injetado via JS/Supabase -->
+                <p class="text-muted">Carregando habilidades...</p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="container">
+            <h2 data-i18n="projectsTitle">Projetos em Destaque</h2>
+            <div id="projects-grid" class="grid-projects">
+                <!-- Injetado via JS/Supabase -->
+                <div class="card skeleton" style="height: 180px;"></div>
+                <div class="card skeleton" style="height: 180px;"></div>
+                <div class="card skeleton" style="height: 180px;"></div>
+            </div>
+        </section>
+
     </main>
-    <footer class="site-footer">
-  <div class="container">
-    <p data-i18n="footer.copyright">© 2026 Gabriel Valentim. Todos os direitos reservados.</p>
-  </div>
-</footer>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="https://github.com/ghvalentim" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://linkedin.com/in/ghvalentim" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="mailto:contato@ghvalentim.dev" target="_blank" rel="noopener">Email</a></li>
+            </ul>
+            <p>&copy; <span id="currentYear"></span> Gabriel Valentim. <span data-i18n="footerText">Todos os direitos reservados.</span></p>
+        </div>
+    </footer>
 
     <script type="module" src="assets/js/app.js"></script>
 </body>
