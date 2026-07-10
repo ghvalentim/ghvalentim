@@ -209,6 +209,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            margin-bottom: var(--space-xl);
             animation: fadeIn 1s ease-out;
         }
 
@@ -330,6 +331,10 @@
         }
 
         /* 8. Section: Grid de Projetos */
+
+        #projects {
+            margin-bottom: var(--space-xl);
+        }
         .grid-projects {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -383,6 +388,10 @@
         }
 
         /* 9. Section: Skills */
+
+        #skills {
+            margin-bottom: var(--space-xl);
+        }
         .skills-container {
             display: flex;
             flex-direction: column;
