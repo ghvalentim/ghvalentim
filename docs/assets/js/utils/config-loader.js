@@ -5,4 +5,6 @@ export async function initMeta() {
   
   document.title = site.title;
   document.querySelector('meta[name="description"]').setAttribute("content", site.description);
+  document.querySelector('meta[name="keywords"]').setAttribute("content", site.keywords.join(', '));
+  document.querySelector('meta[name="author"]').setAttribute("content", site.author);
 }
