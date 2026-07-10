@@ -1,0 +1,14 @@
+{
+  "hero": {
+    "badge": "Disponível para novos desafios",
+    "title": "Gabriel Valentim",
+    "subtitle": "Desenvolvedor Full Stack",
+    "description": "Construindo software com simplicidade, desempenho e propósito.",
+    "cta": "Ver meu trabalho"
+  },
+  "nav": {
+    "about": "Sobre",
+    "projects": "Projetos",
+    "contact": "Contato"
+  }
+}

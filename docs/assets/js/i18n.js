@@ -1,6 +1,6 @@
 export async function loadLanguage(lang) {
   try {
-    const response = await fetch(`config/languages/${lang}.json`);
+    const response = await fetch(`lang/${lang}.json`);
     const data = await response.json();
     
     document.querySelectorAll('[data-i18n]').forEach(element => {
