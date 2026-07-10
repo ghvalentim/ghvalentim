@@ -1,4 +1,4 @@
- /* 1. Variáveis e Design System (Linear/Vercel Vibe) */
+/* 1. Variáveis e Design System (Linear/Vercel Vibe) */
         :root {
             /* Cores Dark (Default) */
             --bg-color: #0a0a0a;
@@ -160,9 +160,30 @@
         }
 
         .icon-btn svg {
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
+        }
+
+        /* --- CLASSES UTILITÁRIAS PARA SVGs --- */
+        .svg-fill {
             fill: currentColor;
+            stroke: none;
+        }
+
+        .svg-stroke {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Divisor visual elegante no header */
+        .nav-divider {
+            width: 1px;
+            height: 24px;
+            background-color: var(--border-color);
+            margin: 0 var(--space-xs);
         }
 
         /* 6. Typography H1, H2, P */
