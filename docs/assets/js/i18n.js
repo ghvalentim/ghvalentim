@@ -1,7 +1,8 @@
 export async function loadLanguage(lang) {
   try {
     // Adicione a barra (/) no início para forçar o caminho absoluto a partir da raiz
-    const response = await fetch(`/config/languages/${lang}.json`);
+    const langPath = `/config/languages/${lang}.json`;
+    const response = await fetch(langPath);
     
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
