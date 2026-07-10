@@ -1,0 +1,18 @@
+{
+  "github": {
+    "url": "https://github.com/ghvalentim",
+    "label": "GitHub"
+  },
+  "linkedin": {
+    "url": "https://linkedin.com/in/ghvalentim",
+    "label": "LinkedIn"
+  },
+  "twitter": {
+    "url": "https://twitter.com/ghvalentim",
+    "label": "X / Twitter"
+  },
+  "email": {
+    "url": "mailto:contato@ghvalentim.dev",
+    "label": "Email"
+  }
+}

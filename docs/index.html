@@ -39,6 +39,7 @@
 </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
     <header>
         <nav aria-label="Main Navigation">
             <a href="#about" data-i18n="nav.about"></a>
@@ -46,12 +47,18 @@
         </nav>
     </header>
 
-    <main>
-        <section id="hero">
-            <h1 data-i18n="hero.title"></h1>
-            <p class="subtitle" data-i18n="hero.subtitle"></p>
-            <p data-i18n="hero.description"></p>
-        </section>
+    <main id="main-content" tabindex="-1">
+        <section id="hero" class="hero">
+  <div class="hero-content">
+    <span class="badge" data-i18n="hero.badge"></span>
+    <h1 data-i18n="hero.title"></h1>
+    <p class="hero-subtitle" data-i18n="hero.subtitle"></p>
+    <p class="hero-description" data-i18n="hero.description"></p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-primary" data-i18n="hero.cta"></a>
+    </div>
+  </div>
+</section>
     </main>
 
     <script type="module" src="assets/js/app.js"></script>

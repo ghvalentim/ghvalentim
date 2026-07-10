@@ -1,8 +1,10 @@
 {
   "hero": {
+    "badge": "Available for new challenges",
     "title": "Gabriel Valentim",
     "subtitle": "Full Stack Developer",
-    "description": "Building software with simplicity, performance and purpose."
+    "description": "Building software with simplicity, performance and purpose.",
+    "cta": "See my work"
   },
   "nav": {
     "about": "About",
