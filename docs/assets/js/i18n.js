@@ -1,6 +1,12 @@
 export async function loadLanguage(lang) {
   try {
-    const response = await fetch(`lang/${lang}.json`);
+    // Adicione a barra (/) no início para forçar o caminho absoluto a partir da raiz
+    const response = await fetch(`/config/languages/${lang}.json`);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
     const data = await response.json();
     
     document.querySelectorAll('[data-i18n]').forEach(element => {
